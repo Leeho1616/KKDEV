@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(https://hinhanhdephd.com/wp-content/uploads/2016/01/hinh-anh-dep-vinh-ha-long-13.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15%; /* Giảm độ rộng của thanh màu nền */
+  height: 100%;
+  background-color: #03a9f4;
+  opacity: 0.8;
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 15%; /* Giảm khoảng cách từ trái của ô nhấp dữ liệu */
+  transform: translate(-50%, -50%);
+  width: 250px; /* Giảm độ rộng của ô nhấp dữ liệu */
+  min-height: 300px; /* Giảm độ cao của ô nhấp dữ liệu */
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 20px; /* Giảm độ dày của ô nhấp dữ liệu */
+  box-sizing: border-box;
+}
+
+.form h2 {
+  color: #777;
+  margin: 0 0 20px; /* Giảm khoảng cách dưới của tiêu đề */
+  padding: 0;
+  font-size: 18px; /* Giảm kích thước chữ của tiêu đề */
+}
+
+.form .input-box {
+  position: relative;
+  margin: 15px 0; /* Giảm khoảng cách giữa các ô nhập liệu */
+}
+
+.form .input-box input {
+  width: 100%;
+  font-size: 14px; /* Giảm kích thước chữ của ô nhập liệu */
+  border: none;
+  border-bottom: 2px solid #777;
+  outline: none;
+  padding: 8px; /* Giảm độ dày của ô nhập liệu */
+  padding-left: 20px; /* Giảm khoảng cách bên trái của ô nhập liệu */
+  box-sizing: border-box;
+  font-weight: bold;
+  color: #777;
+}
+
+.form .input-box input:focus,
+.form .input-box input:valid {
+  border-bottom-color: #03a9f4;
+}
+
+.form .input-box .fa {
+  position: absolute;
+  top: 5px; /* Giảm khoảng cách từ trên xuống của biểu tượng */
+  left: 3px; /* Giảm khoảng cách từ trái sang phải của biểu tượng */
+  font-size: 14px; /* Giảm kích thước của biểu tượng */
+  color: #777;
+}
+
+.form .input-box input[type="submit"] {
+  border: none;
+  cursor: pointer;
+  background-color: #03a9f4;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.5s;
+  font-size: 14px; /* Giảm kích thước chữ của nút submit */
+}
+
+.form .input-box input[type="submit"]:hover {
+  background-color: #ff4987;
+}
+
+.form a {
+  text-decoration: none;
+  color: #777;
+  margin-top: 15px; /* Giảm khoảng cách từ trên xuống của liên kết */
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.5s;
+  font-size: 14px; /* Giảm kích thước chữ của liên kết */
+}
+
+.form a:hover {
+  color: #ff4987;
+}

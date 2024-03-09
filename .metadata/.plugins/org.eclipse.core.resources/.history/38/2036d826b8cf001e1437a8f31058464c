@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>エラーページ</title>
+</head>
+<body>
+<h1>間違ったデータを入力しました。もう一度やり直してください。</h1>
+</body>
+</html>

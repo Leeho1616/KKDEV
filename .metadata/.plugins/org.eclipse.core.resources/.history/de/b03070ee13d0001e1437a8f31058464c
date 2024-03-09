@@ -1,0 +1,43 @@
+package com.webapp.service;
+
+import org.springframework.stereotype.Service;
+
+import com.webapp.model.UsersModel;
+import com.webapp.repository.UsersRepository;
+
+@Service
+public class UsersService {
+	//contruction Autowired
+	private final UsersRepository usersRepository;
+	
+	public UsersService(UsersRepository usersRepository) {
+		super();
+		this.usersRepository = usersRepository;
+	}
+	
+	//registerUser Method: 新規ユーザー登録のため
+	public UsersModel registerUser(String login, String password, String email) {
+	    if (login == null || password == null) {
+	        return null;
+	    } else {
+	        UsersModel usersModel = new UsersModel();
+	        usersModel.setLogin(login);
+	        usersModel.setPassword(password);
+	        usersModel.setEmail(email);
+	        return usersModel;
+	    }
+	}
+	
+	public UsersModel authenticate(String login, String password) {
+		return usersRepository.findByLoginAndPassword(login, password).orElse(null);
+	}
+}
+
+
+	
+
+
+
+
+
+	

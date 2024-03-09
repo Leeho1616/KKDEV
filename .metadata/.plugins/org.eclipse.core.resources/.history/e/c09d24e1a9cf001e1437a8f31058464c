@@ -1,0 +1,6 @@
+package com.webapp.service;
+
+@Service
+public class UsersService {
+
+}

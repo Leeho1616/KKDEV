@@ -1,0 +1,75 @@
+package com.webapp.service;
+
+import java.sql.Date;
+import java.util.Optional;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.webapp.model.UsersModel;
+import com.webapp.repository.UsersRepository;
+
+@Service
+public class UsersService {
+
+    private final PasswordEncoder passwordEncoder;
+    private final UsersRepository usersRepository;
+
+    public UsersService(UsersRepository usersRepository, PasswordEncoder passwordEncoder) {
+        this.usersRepository = usersRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    // registerUser Method: 新規ユーザー登録のため
+    public UsersModel registerUser(String firstname_hina, String lastname_hina, String firstname_kata, String lastname_kata, String email, String password, Date birthday, String address1, String address2, String address3, String nationality, String sex) {
+        if (email == null || password == null) {
+            throw new IllegalArgumentException("Eメールとパスワードを null にすることはできません");
+        }
+
+        if (usersRepository.findFirstByEmail(email).isPresent()) {
+            throw new DuplicateEmailException("Eメールもう存在してます");
+        }
+
+        
+        UsersModel usersModel = new UsersModel();
+        usersModel.setFirstname_hina(firstname_hina);
+        usersModel.setLastname_hina(lastname_hina);
+        usersModel.setFirstname_kata(firstname_kata);
+        usersModel.setLastname_kata(lastname_kata);
+        usersModel.setEmail(email);
+        usersModel.setPassword(passwordEncoder.encode(password));
+        usersModel.setBirthday(birthday);
+        usersModel.setAddress1(address1);
+        usersModel.setAddress2(address2);
+        usersModel.setAddress3(address3);
+        usersModel.setNationality(nationality);
+        usersModel.setSex(sex);
+
+        // Save the user to the repository
+        return usersRepository.save(usersModel);
+    }
+
+    public UsersModel authenticate(String email, String password) {
+        Optional<UsersModel> userOptional = usersRepository.findFirstByEmail(email);
+        if (userOptional.isPresent()) {
+            UsersModel user = userOptional.get();
+            if (passwordEncoder.matches(password, user.getPassword())) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+
+    public PasswordEncoder getPasswordEncoder() {
+        return passwordEncoder;
+    }
+
+    private static class DuplicateEmailException extends RuntimeException {
+        public DuplicateEmailException(String message) {
+            super(message);
+        }
+    }
+    
+    
+}

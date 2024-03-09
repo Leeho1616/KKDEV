@@ -1,0 +1,52 @@
+package com.webapp.model;
+
+import java.sql.Date;
+import java.util.Objects;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="users_table")
+public class UsersModel {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	Long id;
+	
+	String login;
+	
+	String password;
+	
+	String email;
+	
+	String firstname_hina;
+	
+	String lastname_hina;
+	
+	String firstname_kata;
+	
+	String lastname_kata;
+	
+	Date birthday;
+	
+	String address1;
+	
+	String address2;
+	
+	String address3;
+	
+	String nationality;
+	
+	String sex;
+	
+
+	
+	
+	
+	
+
+}

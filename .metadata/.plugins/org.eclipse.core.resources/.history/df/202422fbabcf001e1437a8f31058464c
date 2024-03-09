@@ -1,0 +1,17 @@
+package com.webapp.service;
+
+import org.springframework.stereotype.Service;
+
+import com.webapp.model.UsersModel;
+
+@Service
+public class UsersService {
+	
+	public UsersModel registerUser(String login, String password, String email) {
+		if(login !=null && password !=null) {
+			UsersModel usersModel = new UsersModel();
+			
+		}
+	}
+
+}

@@ -1,0 +1,6 @@
+package com.webapp.controller;
+
+@Controller
+public class UsersController {
+
+}

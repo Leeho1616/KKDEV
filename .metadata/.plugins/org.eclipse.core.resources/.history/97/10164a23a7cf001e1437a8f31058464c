@@ -1,0 +1,8 @@
+package com.webapp.model;
+
+
+@Entity
+@Table
+public class UsersModel {
+
+}

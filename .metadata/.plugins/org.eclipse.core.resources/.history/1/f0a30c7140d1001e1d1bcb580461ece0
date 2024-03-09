@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン画面</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Add any necessary CSS libraries or stylesheets for icons (FontAwesome) -->
+</head>
+<body>
+    <div class="form">
+        <form th:action="@{/login}" method="post" th:object="${loginRequest}">
+            <!-- Specify the Thymeleaf action and method -->
+
+            <h2>ログイン</h2>
+
+            <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" th:field="*{login}" placeholder="ログインID" required>
+                <!-- Use th:field for binding input values to the model attribute -->
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                <input type="password" th:field="*{password}" placeholder="パスワード" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="少なくとも 1 つの数字と 1 つの大文字と小文字、および少なくとも 8 文字以上を含める必要があります" required>
+            </div>
+
+            <div class="input-box">
+                <input type="submit" name="sign-in" value="ログイン">
+            </div>
+
+            <a th:href="@{/register}">初めての方はこちらから</a>
+            <!-- Use th:href for dynamic href attribute -->
+
+        </form>
+    </div>
+</body>
+</html>

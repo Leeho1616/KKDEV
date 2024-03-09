@@ -1,0 +1,39 @@
+package com.webapp.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.webapp.model.UsersModel;
+import com.webapp.repository.UsersRepository;
+
+@Service
+public class UsersService {
+	
+	private final UsersRepository usersRepository;
+	
+	public UsersService(UsersRepository usersRepository) {
+		super();
+		this.usersRepository = usersRepository;
+	}
+	
+	public UsersModel registerUser(String login, String password, String email) {
+	    if (login == null || password == null) {
+	        return null;
+	    } else {
+	        UsersModel usersModel = new UsersModel();
+	        usersModel.setLogin(login);
+	        usersModel.setPassword(password);
+	        usersModel.setEmail(email);
+	        return usersModel;
+	    }
+	}
+}
+
+
+	
+
+
+
+
+
+	

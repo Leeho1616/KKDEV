@@ -1,0 +1,181 @@
+package com.webapp.model;
+
+import java.util.Objects;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="users_table")
+public class UsersModel {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	Long id;
+	
+	String password;
+	
+	String email;
+	
+	String firstname_hina;
+	
+	String lastname_hina;
+	
+	String firstname_kata;
+	
+	String lastname_kata;
+	
+	String birthday;
+	
+	String address1;
+	
+	String address2;
+	
+	String address3;
+	
+	String nationality;
+	
+	String sex;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFirstname_hina() {
+		return firstname_hina;
+	}
+
+	public void setFirstname_hina(String firstname_hina) {
+		this.firstname_hina = firstname_hina;
+	}
+
+	public String getLastname_hina() {
+		return lastname_hina;
+	}
+
+	public void setLastname_hina(String lastname_hina) {
+		this.lastname_hina = lastname_hina;
+	}
+
+	public String getFirstname_kata() {
+		return firstname_kata;
+	}
+
+	public void setFirstname_kata(String firstname_kata) {
+		this.firstname_kata = firstname_kata;
+	}
+
+	public String getLastname_kata() {
+		return lastname_kata;
+	}
+
+	public void setLastname_kata(String lastname_kata) {
+		this.lastname_kata = lastname_kata;
+	}
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getAddress1() {
+		return address1;
+	}
+
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public String getAddress3() {
+		return address3;
+	}
+
+	public void setAddress3(String address3) {
+		this.address3 = address3;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(address1, address2, address3, birthday, email, firstname_hina, firstname_kata, id,
+				lastname_hina, lastname_kata, nationality, password, sex);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UsersModel other = (UsersModel) obj;
+		return Objects.equals(address1, other.address1) && Objects.equals(address2, other.address2)
+				&& Objects.equals(address3, other.address3) && Objects.equals(birthday, other.birthday)
+				&& Objects.equals(email, other.email) && Objects.equals(firstname_hina, other.firstname_hina)
+				&& Objects.equals(firstname_kata, other.firstname_kata) && Objects.equals(id, other.id)
+				&& Objects.equals(lastname_hina, other.lastname_hina)
+				&& Objects.equals(lastname_kata, other.lastname_kata) && Objects.equals(nationality, other.nationality)
+				&& Objects.equals(password, other.password) && Objects.equals(sex, other.sex);
+	}
+
+	@Override
+	public String toString() {
+		return "UsersModel [id=" + id + ", email=" + email + ", firstname_hina=" + firstname_hina + ", lastname_hina="
+				+ lastname_hina + ", firstname_kata=" + firstname_kata + ", lastname_kata=" + lastname_kata
+				+ ", birthday=" + birthday + ", address1=" + address1 + ", address2=" + address2 + ", address3="
+				+ address3 + ", nationality=" + nationality + ", sex=" + sex + "]";
+	}
+
+	
+
+}

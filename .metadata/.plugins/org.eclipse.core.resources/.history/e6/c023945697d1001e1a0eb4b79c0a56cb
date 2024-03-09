@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information</title>
+
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Information Page</h1>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>First Name (Hina)</th>
+                    <th>Last Name (Hina)</th>
+                    <th>First Name (Kata)</th>
+                    <th>Last Name (Kata)</th>
+                    <th>Birthday</th>
+                    <th>Address 1</th>
+                    <th>Address 2</th>
+                    <th>Address 3</th>
+                    <th>Nationality</th>
+                    <th>Sex</th>
+                    <!-- Add more fields as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate over the list of user information -->
+                <tr th:each="userInfo : ${allUserInfos}">
+                    <td th:text="${userInfo.email}"></td>
+                    <td th:text="${userInfo.firstname_hina}"></td>
+                    <td th:text="${userInfo.lastname_hina}"></td>
+                    <td th:text="${userInfo.firstname_kata}"></td>
+                    <td th:text="${userInfo.lastname_kata}"></td>
+                    <td th:text="${userInfo.birthday}"></td>
+                    <td th:text="${userInfo.address1}"></td>
+                    <td th:text="${userInfo.address2}"></td>
+                    <td th:text="${userInfo.address3}"></td>
+                    <td th:text="${userInfo.nationality}"></td>
+                    <td th:text="${userInfo.sex}"></td>
+                    <!-- Add more fields as needed -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Bootstrap JS (Optional, if you need Bootstrap JavaScript features) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

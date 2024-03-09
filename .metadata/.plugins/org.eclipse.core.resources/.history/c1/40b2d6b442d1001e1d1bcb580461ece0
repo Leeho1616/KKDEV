@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録画面</title>
+ 	<link rel="stylesheet" href="css/style.css">
+    <!-- Add any necessary CSS libraries or stylesheets for icons (FontAwesome) -->
+</head>
+<body>
+    <div class="form">
+        <form th:action="@{/register}" method="post" th:object="${registerRequest}">
+            <!-- Specify the Thymeleaf action and method -->
+
+            <h2>新規登録</h2>
+
+            <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" th:field="*{email}" placeholder="Eメール" required>
+                <!-- Use th:field for binding input values to the model attribute -->
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                <input type="password" th:field="*{password}" placeholder="パスワード" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="少なくとも 1 つの数字と 1 つの大文字と小文字、および少なくとも 8 文字以上を含める必要があります" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" th:field="*{firstname_hina}" placeholder="姓（全角ひな）" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" th:field="*{lastname_hina}" placeholder="名（全角ひな）" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" th:field="*{firstname_kata}" placeholder="姓（全角カタ）" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" th:field="*{lastname_kata}" placeholder="名（全角カタ）" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <input type="text" th:field="*{birthday}" placeholder="生年月日(yyyy/mm/dd)" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <input type="text" th:field="*{address1}" placeholder="都道府県" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <input type="text" th:field="*{address2}" placeholder="市町村" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <input type="text" th:field="*{address3}" placeholder="丁目以降" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <input type="text" th:field="*{nationality}" placeholder="国籍" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-venus-mars" aria-hidden="true"></i>
+                <input type="text" th:field="*{sex}" placeholder="性別 (男,　女,　一つ書いてください)" required>
+            </div>
+
+            <div class="input-box">
+                <input type="submit" name="sign-up" value="登録">
+            </div>
+
+            <a th:href="@{/login}">既にアカウントをお持ちの方はこちらからログイン</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="フィールド &apos;com.webapp.service.UsersService.passwordEncoder&apos; を &apos;com.webapp.service.UsersService&apos;にカプセル化します&#x0D;&#x0A;- 元のプロジェクト: &apos;webapp&apos;&#x0D;&#x0A;- オリジナル要素: &apos;com.webapp.service.UsersService.passwordEncoder&apos;&#x0D;&#x0A;- getter メソッド名: &apos;getPasswordEncoder&apos;&#x0D;&#x0A;- setter メソッド名: &apos;setPasswordEncoder&apos;&#x0D;&#x0A;- フィールドの可視性: &apos;public&apos;&#x0D;&#x0A;- 宣言型の getter および setter メソッドを使用" comments="false" declaring="true" description="フィールド &apos;passwordEncoder&apos; をカプセル化します" flags="589830" getter="getPasswordEncoder" id="org.eclipse.jdt.ui.self.encapsulate" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.webapp.service{UsersService.java[UsersService^passwordEncoder" insertion="2" setter="setPasswordEncoder" stamp="1708996897272" version="1.0" visibility="1"/>
+</session>

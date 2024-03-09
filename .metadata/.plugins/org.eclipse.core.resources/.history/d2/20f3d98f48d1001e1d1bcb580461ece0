@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録画面</title>
+
+    <!-- Thêm liên kết Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Optional: Thêm Font Awesome cho biểu tượng -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- CSS tùy chỉnh của bạn -->
+    <link rel="stylesheet" href="path/to/your/custom.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="form col-md-6 offset-md-3">
+            <form th:action="@{/register}" method="post" th:object="${registerRequest}" class="p-3">
+
+                <h2 class="text-center">新規登録</h2>
+
+                <div class="form-group">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" th:field="*{email}" class="form-control" placeholder="Eメール" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    <input type="password" th:field="*{password}" class="form-control" placeholder="パスワード" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="少なくとも 1 つの数字と 1 つの大文字と小文字、および少なくとも 8 文字以上を含める必要があります" required>
+                </div>
+
+                <!-- Thêm kiểu Bootstrap tương tự cho các hộp nhập khác -->
+                <div class="form-group">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" th:field="*{firstname_hina}" class="form-control" placeholder="姓（全角ひな）" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" th:field="*{lastname_hina}" class="form-control" placeholder="名（全角ひな）" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" th:field="*{firstname_kata}" class="form-control" placeholder="姓（全角カタ）" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" th:field="*{lastname_kata}" class="form-control" placeholder="名（全角カタ）" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <input type="text" th:field="*{birthday}" class="form-control" placeholder="生年月日(yyyy/mm/dd)" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <input type="text" th:field="*{address1}" class="form-control" placeholder="都道府県" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <input type="text" th:field="*{address2}" class="form-control" placeholder="市町村" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <input type="text" th:field="*{address3}" class="form-control" placeholder="丁目以降" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    <input type="text" th:field="*{nationality}" class="form-control" placeholder="国籍" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-venus-mars" aria-hidden="true"></i>
+                    <input type="text" th:field="*{sex}" class="form-control" placeholder="性別 (男,　女,　一つ書いてください)" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" name="sign-up" class="btn btn-primary btn-block">登録</button>
+                </div>
+
+                <p class="text-center">
+                    <a th:href="@{/login}">既にアカウントをお持ちの方はこちらからログイン</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Thêm Bootstrap JS và Popper.js (cho các thành phần Bootstrap như dropdowns, modals, v.v.) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/

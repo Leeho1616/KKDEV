@@ -1,0 +1,9 @@
+package com.webapp.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+@Table
+public class UsersModel {
+
+}
